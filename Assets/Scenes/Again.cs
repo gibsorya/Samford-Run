@@ -2,31 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class Again : MonoBehaviour
 {
-    //脚本挂在主角身上（主角身上要有碰撞器和刚体，不需要勾选is Trigger）
-    //将障碍物的tag改成cube，加上碰撞器，勾上 is Trigger
+    public GameObject Youwin;
+    public GameObject YouLose;
+    public int speed=6;
 
-    void Start()
+    private void Awake()
     {
-        
+        Time.timeScale = 1;
     }
-
-    // Update is called once per frame
-   
     private void OnTriggerEnter(Collider other)
     {  
-        //如果挂有当前脚本的物体碰到tag为cube的物体就执行下面代码
-        if (other.gameObject.tag=="cube")
+        if (other.gameObject.tag=="win")
         {
-            //GetScene();
-            Application.LoadLevel(Application.loadedLevelName);//加载当前场景
-          
-
-
+  
+            Time.timeScale = 0;
+            Youwin.SetActive(true);
+        }
+        if (other.gameObject.tag == "Lose")
+        {
+            Time.timeScale = 0;
+            YouLose.SetActive(true);
         }
     }
+    public void Againa()
+    {
+        Debug.Log("Restart button clicked");
+        SceneManager.LoadScene("RunningScene");
 
+    }
+    
+    public void QUIT()
+    {
+        Application.Quit();
+    }
 
 }
