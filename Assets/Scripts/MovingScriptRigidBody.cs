@@ -6,13 +6,16 @@ public class MovingScriptRigidBody : MonoBehaviour
 {
     [SerializeField]
     private float rotationRate = 360, moveSpeed = 2;
+    private float time;
     private string moveInputAxis = "Vertical";
     private string turnInputAxis = "Horizontal";
+    private float addSpeed;
     Rigidbody rb;
 
-    private bool isMoving;
-
     Animator animation;
+    private bool isAddSpeed;
+    private float currtime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,16 @@ public class MovingScriptRigidBody : MonoBehaviour
         float turnAxis = Input.GetAxis(turnInputAxis);
 
         ApplyInput(moveAxis, turnAxis);
+        if (isAddSpeed)
+        {
+            currtime += Time.deltaTime;
+            if (currtime >= time)
+            {
+                moveSpeed = this.moveSpeed - addSpeed;
+                isAddSpeed = false;
+                currtime = 0;
+            }
+        }
     }
 
     private void ApplyInput(float moveInput, float turnInput)
@@ -47,6 +60,15 @@ public class MovingScriptRigidBody : MonoBehaviour
     {
         transform.Rotate(0, input * rotationRate * Time.deltaTime, 0);
     }
+
+    public void SetSpeed(int Addspeed, float timer)
+    {
+        addSpeed = Addspeed;
+        isAddSpeed = true;
+        moveSpeed = moveSpeed + addSpeed;
+        time = timer;
+    }
+
 
     #endregion
 }

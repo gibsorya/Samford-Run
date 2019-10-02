@@ -55,14 +55,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\ButtonHandler.cs" />
-     <Compile Include="Assets\PuaseMenuScript.cs" />
-     <Compile Include="Assets\Scenes\Again.cs" />
+     <Compile Include="Assets\Scripts\AddSpeed.cs" />
+     <Compile Include="Assets\Scripts\Again.cs" />
      <Compile Include="Assets\Scripts\AnimatorMoveScript.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CharacterController.cs" />
      <Compile Include="Assets\Scripts\MovingScript.cs" />
      <Compile Include="Assets\Scripts\MovingScriptRigidBody.cs" />
+     <Compile Include="Assets\Scripts\PuaseMenuScript.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Unity Projects/Samford Run/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
