@@ -3,7 +3,9 @@ guid: 478f406e1b2e4ea408c463585931500d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Body: {instanceID: 0}
+  - Car: {fileID: 1903525106761814448, guid: cc77ea4bc3a36f24389bddd32b829e37, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

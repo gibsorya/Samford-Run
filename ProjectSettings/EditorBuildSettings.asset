@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/RealMainMenu.unity
+    guid: 596260f27457a0f4c87866c602c9636f
+  - enabled: 1
+    path: Assets/Scenes/SamfordMainCampus.unity
+    guid: 2c1d56c711f880045b1a2ac976add39a
+  - enabled: 1
+    path: Assets/Scenes/GolfCart Mode.unity
+    guid: 814769ea2e2b91946a7e50fc153d652e
   m_configObjects: {}

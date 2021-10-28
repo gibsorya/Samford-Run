@@ -7,7 +7,12 @@ public class Again : MonoBehaviour
 {
     public GameObject Youwin;
     public GameObject YouLose;
+    public GameObject nameInputBox;
     public int speed=6;
+    public ObjectPooler ObjectPooler;
+    public GameObject leaderboard;
+
+    public bool IsInvincible;
 
     private void Awake()
     {
@@ -23,20 +28,35 @@ public class Again : MonoBehaviour
         }
         if (other.gameObject.tag == "Lose")
         {
+            if (IsInvincible)
+            {
+                return;
+            }
             Time.timeScale = 0;
+            //nameInputBox.SetActive(true);
             YouLose.SetActive(true);
+            leaderboard.gameObject.GetComponent<Leaderboard>().Restart();
+            
         }
+        
     }
     public void Againa()
     {
+
         Debug.Log("Restart button clicked");
-        SceneManager.LoadScene("RunningScene");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
     }
     
     public void QUIT()
     {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
+
+   
 
 }

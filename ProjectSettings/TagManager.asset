@@ -5,6 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - cube
+  - Lose
+  - Checkpoint
+  - LevelManager
+  - ObjectSpawner
   layers:
   - Default
   - TransparentFX
@@ -14,9 +18,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - PostProcessing
+  - Minimap
+  - PlayerRig
   - 
   - 
   - 
